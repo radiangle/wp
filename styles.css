@@ -1,0 +1,276 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* Container for consistent width and centering */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.75em; }
+
+/* Header styles */
+header {
+    background-color: #203447;
+    color: #ecf0f1;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ecf0f1;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: #3498db;
+}
+
+/* Main content styles */
+main {
+    padding: 2rem 0;
+}
+
+/* Card style for content sections */
+.card, .project-card, .cert-item, .contact-form, .contact-info {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover, .project-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Button styles */
+.btn, button {
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover, button:hover {
+    background-color: #2980b9;
+}
+
+/* Grid layout for responsive design */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* Skill bar styles */
+.skill-bar {
+    margin-bottom: 1rem;
+}
+
+.skill-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.skill-level {
+    height: 10px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-level-fill {
+    height: 100%;
+    background-color: #3498db;
+    transition: width 1s ease-in-out;
+}
+
+/* Form styles */
+form {
+    display: grid;
+    gap: 1rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+/* Accessibility styles */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #f4f4f4;
+    }
+    
+    header {
+        background-color: #2c3e50;
+    }
+
+    nav ul li a {
+        color: #ecf0f1;
+    }
+
+    nav ul li a:hover {
+        color: #3498db;
+    }
+
+    .card, .project-card, .cert-item, .contact-form, .contact-info {
+        background-color: #2c2c2c;
+        color: #f4f4f4;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #ecf0f1;
+    }
+
+    .skill-level {
+        background-color: #4a4a4a;
+    }
+
+    .skill-level-fill {
+        background-color: #3498db;
+    }
+
+    .project-description {
+        color: #bbb;
+    }
+
+    .cert-logo {
+        background-color: #444;
+        color: #ddd;
+    }
+
+    .contact-icon {
+        background-color: #3498db;
+        color: #f4f4f4;
+    }
+
+    input, textarea {
+        background-color: #333;
+        color: #f4f4f4;
+        border: 1px solid #555;
+    }
+
+    input::placeholder, textarea::placeholder {
+        color: #aaa;
+    }
+
+    .btn, button {
+        background-color: #3498db;
+        color: #f4f4f4;
+    }
+
+    .btn:hover, button:hover {
+        background-color: #2980b9;
+    }
+}
+
+/* Print styles */
+@media print {
+    header, nav, footer {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    
+    .card {
+        page-break-inside: avoid;
+    }
+}
